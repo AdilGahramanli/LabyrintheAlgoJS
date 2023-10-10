@@ -17,3 +17,21 @@
     height: 33%;
     border: 1px solid red;
 }
+
+#labyrinthe {
+    margin-top:5rem;
+    padding:0;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border: 1.5px solid black;
+    width: 50rem;
+    height:50rem;
+}
+
+#labyrinthe> div {
+    margin: 0;
+    width: 33%;
+    height: 33%;
+    border: 1px solid red;
+}
