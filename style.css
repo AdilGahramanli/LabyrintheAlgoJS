@@ -1,36 +1,12 @@
-#labyrintheCases {
-    margin:0;
-    padding:0;
-    display: flex;
-    flex-wrap: wrap;
+* {
+    /* Quand on spécifie une taille, elle prendra en compte la bordure */
     box-sizing: border-box;
-    border: 1.5px solid black;
-    width: 50rem;
-    height:50rem;
 }
 
-
-#labyrintheCases> div {
-    /* box-sizing: border-box; */
-    margin: 0;
-    width: 33%;
-    height: 33%;
-    border: 1px solid red;
-}
-
-/* #labyrinthe {
-    margin-top:5rem;
-    padding:0;
+.main-container {
+    /* On organise les enfants de main-container de manière flex */
     display: flex;
+    
+    /* On les laisse tomber à la ligne s'ils sont trop serrés */
     flex-wrap: wrap;
-    box-sizing: border-box;
-    border: 1.5px solid black;
-    width: 50rem;
-    height:
-
-#labyrinthe> div {
-    margin: 0;
-    width: 33%;
-    height: 33%;
-    border: 1px solid red;
-} */
+}
