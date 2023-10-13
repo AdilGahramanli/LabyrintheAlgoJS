@@ -6,6 +6,7 @@ elle aussi recréait le patron(ou structure de caractéristiques) d'un labyrinth
 class Cell {
     constructor(cellData) {
         this.entrance = cellData.entrance;
+        this.exit = cellData.exit;
         this.rowX = cellData.posX;
         this.columnY = cellData.posY;
         this.walls = cellData.walls;
@@ -27,7 +28,8 @@ class Cell {
                                                          mais sous forme booléen dans walls, on doit donc le transformer avec la fonction
                                                          computeBordders dont on récupère la valeur ici*/
          cellDOM.innerHTML = "X" + this.rowX + " </br> " + "Y "+ this.columnY;
-         
+         if (this.entrance) {cellDOM.style.backgroundColor = "yellow";}
+         if (this.exit) {cellDOM.style.backgroundColor = "red";}
         return cellDOM;
 
     }

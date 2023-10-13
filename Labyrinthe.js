@@ -8,7 +8,9 @@ class Labyrinthe {
     constructor(labyData) {
         this.cells = this.initCells(labyData);
         this.startCase = this.find_Start_Case();
-        this.visited_Cases = [this.find_Start_Case()];
+        this.visited_Cells = [this.find_Start_Case()];
+        // this.neighbours = this.find_neighbours();
+        this.find_Current_Cell = this.find_Current_Cell();
     }
 
     //display va apporter détermienrr la taille des cellules, du container et ajouter le tout au DOM
@@ -27,7 +29,7 @@ class Labyrinthe {
             let cellDOM = cell.getDOM();
             container.appendChild(cellDOM);
         }
-    
+
     }
 
     initCells(labyData) {
@@ -38,7 +40,7 @@ class Labyrinthe {
         }
         return cells;
     }
-    
+
     //Début de DFS (création de fonctions find_Start_Case, find actual_Case, 
     //find_Adjacentes_Cases, find_Next_Case )
     //Fonctions find_Start_Case pour trouver la case d'entrée.
@@ -54,10 +56,29 @@ class Labyrinthe {
         let case_Choice = possible_Start_Case[case_Choice_Index];
         return case_Choice;
     }
+    
+   find_Current_Cell() {
+       let current_Cell = this.cells[0];
+       return current_Cell;
+   }
+
+   find_Adjacentes_Cases() {
+       let adjacentes_Cases = [];
+       this.forEach(cell => { if (cell.rowX - 1) { adjacentes_Cases.push(cell); } });
+       this.forEach(cell => { if (cell.rowX + 1) { adjacentes_Cases.push(cell); } });
+       this.forEach(cell => { if (cell.columnY - 1) { adjacentes_Cases.push(cell); } });
+       this.forEach(cell => { if (cell.columnY + 1) { adjacentes_Cases.push(cell); } });
+       return adjacentes_Cases;
+   }
+   }
 
 
+// find_neighbours() {
+//     let neighbours_Found = [];
+//     this.forEach(cell => { if (cell.rowX - 1) { neighbours_Found.push(cell); } });
+//     this.forEach(cell => { if (cell.rowX + 1) { neighbours_Found.push(cell); } });
+//     return neighbours_Found;
     
-    
+// }
 
-    
 }
