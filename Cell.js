@@ -26,6 +26,7 @@ class Cell {
         cellDOM.style.borderWidth = this.computeBorders(); /*borderWidth peut recevoir 4 valeurs et nous avons ces 4 valeurs
                                                          mais sous forme booléen dans walls, on doit donc le transformer avec la fonction
                                                          computeBordders dont on récupère la valeur ici*/
+         cellDOM.innerHTML = "X" + this.rowX + " </br> " + "Y "+ this.columnY;
          
         return cellDOM;
 
